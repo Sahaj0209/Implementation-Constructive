@@ -3,13 +3,15 @@ using namespace std;
 int main(){
     int i;
     cin>>i;
-    int level = 0;
-    int cubesReq=1;
-    while(cubesReq<=i){
-        level=level+1;
+    int height = 0;
+    int level = 1;
+    while(i>=0){
+        int cubesReq=level*(level+1)/2;
+        if(i<cubesReq) break;
         i=i-cubesReq;
-        cubesReq=cubesReq+level;
+        level++;
+        height++;
     }
-    cout<<level<<endl;
+    cout<<height<<endl;
     return 0;
 }
